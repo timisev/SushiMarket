@@ -1,0 +1,41 @@
+﻿@model Order
+
+<h2></h2>
+<p></p>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Checkout" method="post">
+    <h3>Ship to</h3>
+    <div>
+        <label>Имя:</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <h3>Адрес</h3>
+    <div>
+        <label>Город:</label>
+        <input asp-for="City" class="form-control" />
+    </div> 
+    <div>
+        <label>Улица:</label>
+        <input asp-for="Street" class="form-control" />
+    </div> 
+    <div>
+        <label>Дом:</label>
+        <input asp-for="House" class="form-control" />
+    </div> 
+    <div>
+        <label>Квартира:</label>
+        <input asp-for="Flat" class="form-control" />
+    </div>
+    <div>
+        <label>Этаж:</label>
+        <input asp-for="Floor" class="form-control" />
+    </div>
+    <div>
+        <label>Комментарий курьеру:</label>
+        <textarea asp-for="Comment" class="form-control" id="exampleFormControlTextarea1"></textarea>
+    </div> 
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+    </div>
+</form>

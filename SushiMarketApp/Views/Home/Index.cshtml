@@ -1,0 +1,10 @@
+﻿@model ProductListViewModel
+
+<div>
+    @await Component.InvokeAsync("NavigationMenu")
+</div>
+
+@foreach(var p in Model.Products)
+{
+    @Html.Partial("ProductSummary", p)
+}

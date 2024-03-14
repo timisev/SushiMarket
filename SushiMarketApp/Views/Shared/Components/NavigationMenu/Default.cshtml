@@ -1,0 +1,10 @@
+﻿@model IEnumerable<string>
+
+@foreach(var category in Model) 
+{
+    <a class="button @(category == ViewBag.SelectedCategory ? "button" : "button2")"
+       asp-action="Index" asp-controller="Home" 
+       asp-route-category="@category">
+        @category
+    </a>
+}

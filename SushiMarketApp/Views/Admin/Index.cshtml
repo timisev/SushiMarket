@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Product>
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>Название</td>
+            <td>Категория</td>
+            <td>Цена</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Category</td>
+                <td>@p.Price</td>
+                <td>
+                    <form asp-action="Delete" asp-controller="Admin" method="post">
+                        <a asp-action="Edit" class="btn btn-sm btn-warning"
+                           asp-route-productId="@p.ProductID">
+                            Edit
+                        </a>
+                        <input type="hidden" name="ProductID" value="@p.ProductID" />
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form> 
+                </td>
+            </tr>
+        }
+    </tbody> 
+</table>
